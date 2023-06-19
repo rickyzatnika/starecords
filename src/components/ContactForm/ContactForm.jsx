@@ -27,8 +27,8 @@ const ContactForm = () => {
 
       if (response.ok) {
         const timeoutId = setTimeout(() => {
-          setSuccess(response.message);
           setLoading(false);
+          setSuccess(true);
         }, 3000);
         reset();
         return () => clearTimeout(timeoutId);
@@ -74,7 +74,9 @@ const ContactForm = () => {
         />
         {err && <span className="text-sm text-red-500 py-4">{`*${err}`}</span>}
         {success && (
-          <span className="text-sm text-green-600 py-4">{success}</span>
+          <span className="text-sm text-green-600 py-4 capitalize">
+            thank you, we will contact you soon
+          </span>
         )}
         <button
           type="submit"
