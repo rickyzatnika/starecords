@@ -64,7 +64,7 @@ export default function Home() {
       {/* Services Section */}
       <div className='relative overflow-hidden w-full h-full'>
         <div className='w-full h-full py-4 md:py-14'>
-          <h2 className="font-[Dirty-Bos] mb-10 pl-2 text-left text-3xl md:text-4xl   font-semibold">
+          <h2 className="font-[Coco] mb-10 pl-2 text-left text-4xl md:text-5xl   font-semibold">
             What We Do... ??
           </h2>
           <div className='relative overflow-hidden w-full h-full'>
