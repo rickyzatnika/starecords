@@ -46,7 +46,7 @@ const BlogPost = async () => {
               />
             </div>
             <Link
-              href={`/blog/${post.slug}`}
+              href={`/news/${post.slug}`}
               className="flex flex-col gap-4 group py-1 mb-8 md:mb-0"
             >
               <h1 className="uppercase relative left-0 group-hover:left-3 transition-all duration-200 ease-out group-hover:text-red-600">
