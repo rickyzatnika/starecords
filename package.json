@@ -10,12 +10,24 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
+    "lightgallery": "^2.7.1",
+    "moment": "^2.29.4",
+    "mongoose": "6.11.1",
     "next": "13.4.5",
+    "next-auth": "^4.22.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.44.3",
+    "react-icons": "^4.9.0",
+    "swr": "^2.1.5",
     "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "daisyui": "^3.1.1"
   }
 }

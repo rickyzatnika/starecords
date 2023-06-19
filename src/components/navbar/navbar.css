@@ -1,0 +1,23 @@
+.navLinks li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: rgb(190, 3, 3);
+  z-index: 20;
+  bottom: -5px;
+  transform-origin: center;
+  transition: all 0.4s ease;
+  margin: 0 auto;
+}
+
+li a:hover::before {
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+li a.active::before {
+  width: 100%;
+}
