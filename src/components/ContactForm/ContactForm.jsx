@@ -27,8 +27,8 @@ const ContactForm = () => {
 
       if (response.ok) {
         const timeoutId = setTimeout(() => {
-          setLoading(false);
           setSuccess(true);
+          setLoading(false);
         }, 3000);
         reset();
         return () => clearTimeout(timeoutId);
@@ -37,7 +37,6 @@ const ContactForm = () => {
         setError(response.message);
       }
     } catch (error) {
-      reset();
       setLoading(false);
       setError(error.message);
       const timeoutId = setTimeout(() => {
