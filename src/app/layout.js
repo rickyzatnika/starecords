@@ -32,8 +32,8 @@ export default function RootLayout({ children }) {
           <div className='pt-20 relative z-50  min-h-screen flex flex-col justify-between w-full max-w-6xl mx-auto '>
             <Navbar />
             {children}
-            <Footer />
           </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

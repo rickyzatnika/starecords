@@ -64,9 +64,12 @@ export default function Home() {
       {/* Services Section */}
       <div className='relative overflow-hidden w-full h-full'>
         <div className='w-full h-full py-4 md:py-14'>
-          <h2 className="font-[Coco] mb-10 pl-2 text-left text-4xl md:text-5xl   font-semibold">
-            What We Do... ??
-          </h2>
+          <div className='w-full text-center max-w-md mx-auto mb-10'>
+            <h2 className=" mb-3 pl-2 text-xl md:text-2xl  font-semibold">
+              Our <span className='border-b border-zinc-500 font-bold'>Services</span>
+            </h2>
+            <p className='text-sm md:text-md'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero?</p>
+          </div>
           <div className='relative overflow-hidden w-full h-full'>
             <Image src="/inst.png" alt="" width={1200} height={1200} className='object-cover' priority={true} />
           </div>

@@ -1,4 +1,7 @@
+import ContactForm from "@/components/ContactForm/ContactForm";
+import Image from "next/image";
 import React from "react";
+import { MdMapsHomeWork, MdPhoneIphone, MdMail } from "react-icons/md";
 
 export const metadata = {
   title: "Starecords - Contact",
@@ -6,7 +9,66 @@ export const metadata = {
 };
 
 const Contact = () => {
-  return <div className="pt-14">Contact</div>;
+  return (
+    <section className="w-full h-hull">
+      <div className="relative w-full h-[400px]  ">
+        <Image
+          src="/cs.jpg"
+          alt=""
+          fill={true}
+          priority={true}
+          className="object-cover object-bottom grayscale-[100]"
+        />
+        <h1 className="text-3xl md:text-5xl text-zinc-900 dark:text-zinc-200 uppercase bg-zinc-900/20 backdrop-blur-lg py-2 px-5 w-full text-center absolute bottom-0 font-[Coco]">
+          Contact Us
+        </h1>
+      </div>
+      <div className="w-full h-full py-0 md:py-20">
+        <div className="py-10 ">
+          <h2 className="text-center text-2xl md:text-4xl w-full mb-14 max-w-md mx-auto ">
+            Let`s discuss on{" "}
+            <span className="font-bold border-b border-zinc-500">
+              something
+            </span>{" "}
+            cool together
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-14">
+            <div className="col-span-1 md:col-span-8">
+              <ContactForm />
+            </div>
+            <div className="col-span-1 md:col-span-4">
+              <div className="space-y-4 px-6 sm:px-0 text-xs sm:text-md relative top-4 md:top-6">
+                <div className="flex gap-2 items-start md:items-center">
+                  <MdMapsHomeWork size={25} />
+                  <p className="text-sm md:text-[0.925rem]">
+                    Jl.Sarimadu Barat no.39 Bandung 30124
+                  </p>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <MdPhoneIphone size={25} />
+                  <p className="text-sm md:text-[0.925rem]">
+                    0851 5507 7606 <span className="text-xs">(Wandi)</span>{" "}
+                  </p>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <MdPhoneIphone size={25} />
+                  <p className="text-sm md:text-[0.925rem]">
+                    0813 2048 6864 <span className="text-xs">(Tito)</span>{" "}
+                  </p>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <MdMail size={25} />
+                  <p className="text-sm md:text-[0.925rem]">
+                    starecords.office.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;
