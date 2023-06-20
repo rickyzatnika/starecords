@@ -95,3 +95,20 @@ body {
     flex-direction: column;
   }
 } */
+
+.slides {
+  animation: slide 30s infinite linear alternate;
+  margin: 50px 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-30%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}

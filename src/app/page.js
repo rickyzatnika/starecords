@@ -10,7 +10,9 @@ import { MdMapsHomeWork, MdPhoneIphone, MdMail } from "react-icons/md";
 import data from '@/utils/data'
 import ContactForm from '@/components/ContactForm/ContactForm'
 
+
 const poppins = Poppins({ subsets: ['latin'], weight: ["400"], crossOrigin: "true" });
+
 
 
 export default function Home() {
@@ -18,15 +20,19 @@ export default function Home() {
 
   return (
 
-    <section className={`w-full h-full ${poppins.className} `} >
-      <div className="hero min-h-screen ">
+    <section className={`w-full h-full overflow-hidden ${poppins.className} `} >
+
+      <div className="hero min-h-screen -mt-0 md:-mt-14">
         <div className="hero-content flex flex-col leading-relaxed items-start md:items-center justify-center ">
+          <div className='max-w-xl mx-auto'>
+            <Image src="/kaset.png" className='animate-spin' alt='disc' width={150} height={150} priority={true} />
+          </div>
           <div className='text-left md:text-center'>
-            <h1 className="text-4xl md:text-5xl relative">MUSIC <span className='text-[#FDDE13] tracking-widest font-bold font-[Coco]'>RECORDING</span> STUDIO</h1>
+            <h1 className="text-3xl text-center md:text-left md:text-5xl relative">MUSIC <span className='text-[#FDDE13] tracking-widest font-bold font-[Coco]'>RECORDING</span> STUDIO</h1>
             <h3 className="text-md md:text-2xl my-2">Berkarya dengan Lebih dari Sekedar Catatan <br />Kualitas Tinggi dan Inovasi di Setiap Project</h3>
           </div>
-          <p className="py-4 md:py-6 text-zinc-500 px-0 md:px-6 text-left md:text-center">Kami adalah sebuah music studio recording yang berdedikasi untuk memberikan pengalaman rekaman berkualitas dan memukau bagi para musisi dan penggemar musik di seluruh dunia.</p>
-          <Link href="/about" className="btn btn-outline hover:bg-transparent hover:text-zinc-500">See Project</Link>
+          <p className="py-4 md:py-6 text-sm leading-relaxed text-zinc-500 px-0 md:px-6 text-left md:text-center">Kami adalah sebuah music studio recording yang berdedikasi untuk memberikan pengalaman rekaman berkualitas dan memukau bagi para musisi dan penggemar musik di seluruh dunia.</p>
+          <Link href="/about" className="btn btn-outline hover:bg-transparent hover:text-zinc-500">see project</Link>
         </div>
       </div>
       {/* About Us Section */}
@@ -82,7 +88,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="w-full flex flex-col md:flex-row gap-10 md:gap-30 items-center justify-center items"
+            className="w-full px-4 flex flex-col md:flex-row gap-10 md:gap-30 items-center justify-center items"
           >
             <Link
               href="/about"
@@ -114,6 +120,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* Contact Section */}
       <div className='w-full h-full py-0 md:py-20'>
         <div className={` py-10 ${mode === "light" ? "bg-[#040608] text-zinc-200" : "bg-zinc-100"} text-zinc-500`}>
@@ -158,6 +165,37 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      {/* Thank To */}
+      <div className='w-[80%] mx-auto h-full overflow-hidden'>
+        <h2 className='text-center py-8'>Thank To :</h2>
+        <div className='w-[1200px] slides h-full flex items-center'>
+          <div className='w-full h-full group'>
+
+            <Image src="/1.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/2.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/3.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/4.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/5.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/6.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/7.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
+          </div>
+          <div className='w-full h-full'>
+            <Image src="/8.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
           </div>
         </div>
       </div>
