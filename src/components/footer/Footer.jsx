@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full bg-[#0c0c0c] gap-5 p-8 flex items-center justify-center md:justify-between flex-col-reverse md:flex-row">
-          <div className="text-sm text-zinc-400 ">
+          <div className="text-sm text-center text-zinc-400 ">
             <Link href="/" passHref={true}>
               Starecords.ent © 2023 All Right Reserved
             </Link>

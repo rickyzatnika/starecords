@@ -26,13 +26,13 @@ const BlogPost = async () => {
 
   return (
     <>
-      <div className="w-full h-full py-20 px-4 md:px-20 lg:px-24  ">
+      <div className="w-full h-full py-10 md:py-20 px-4 md:px-20 lg:px-24  ">
         {data.map((post) => (
           <div
             key={post.id}
-            className="w-full group test py-8 flex flex-col md:flex-row items-start gap-4"
+            className="w-full test py-4 flex flex-col md:flex-row items-start gap-4"
           >
-            <div className="group w-full md:w-52 h-full md:h-52 mx-auto md:mx-0 mb-0 md:mb-6 overflow-hidden">
+            <div className="w-full md:w-52 h-full md:h-52 mx-auto md:mx-0 mb-0 md:mb-6 overflow-hidden">
               <Image
                 src={post.url}
                 placeholder="blur"
@@ -42,7 +42,7 @@ const BlogPost = async () => {
                 height={900}
                 objectFit="contain"
                 priority={true}
-                className="scale-100 group-hover:scale-110 transition-all duration-1000 ease-linear"
+                className="scale-100 group group-hover:scale-110 transition-all duration-1000 ease-linear"
               />
             </div>
             <Link

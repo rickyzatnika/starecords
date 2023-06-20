@@ -1,5 +1,5 @@
 "use client"
-
+import { useState, useEffect } from "react"
 import Image from 'next/image'
 import Link from 'next/link'
 import { Poppins } from 'next/font/google'
@@ -18,25 +18,42 @@ const poppins = Poppins({ subsets: ['latin'], weight: ["400"], crossOrigin: "tru
 export default function Home() {
   const { mode } = useContext(ThemeContext);
 
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const images = ['/1.png', '/2.png', '/3.png', '/4.png', '/5.png', '/6.png', '/7.png', '/8.png'];
+  const totalSlides = images.length;
+  const slideDuration = 1000; // Duration per slide (in milliseconds)
+
+  useEffect(() => {
+    const slideShowTimer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+    }, slideDuration);
+
+    return () => {
+      clearInterval(slideShowTimer);
+    };
+  }, [totalSlides]);
+
   return (
 
     <section className={`w-full h-full overflow-hidden ${poppins.className} `} >
 
       <div className="hero min-h-screen -mt-0 md:-mt-14">
         <div className="hero-content flex flex-col leading-relaxed items-start md:items-center justify-center ">
-          <div className='max-w-xl mx-auto'>
-            <Image src="/kaset.png" className='animate-spin' alt='disc' width={150} height={150} priority={true} />
+          <div className='text-center'>
+            <h1 className="text-3xl md:text-5xl relative">MUSIC <span className='text-[#FDDE13] tracking-widest font-bold font-[Coco]'>RECORDING</span> STUDIO</h1>
+            <h3 className="text-md md:text-2xl mt-2">Berkarya dengan Lebih dari Sekedar Catatan <br />Kualitas Tinggi dan Inovasi di Setiap Project</h3>
           </div>
-          <div className='text-left md:text-center'>
-            <h1 className="text-3xl text-center md:text-left md:text-5xl relative">MUSIC <span className='text-[#FDDE13] tracking-widest font-bold font-[Coco]'>RECORDING</span> STUDIO</h1>
-            <h3 className="text-md md:text-2xl my-2">Berkarya dengan Lebih dari Sekedar Catatan <br />Kualitas Tinggi dan Inovasi di Setiap Project</h3>
+          <div className='max-w-xl mx-auto my-1'>
+            <Image src="/kaset.png" className='animate-spin' alt='disc' width={120} height={120} priority={true} />
           </div>
-          <p className="py-4 md:py-6 text-sm leading-relaxed text-zinc-500 px-0 md:px-6 text-left md:text-center">Kami adalah sebuah music studio recording yang berdedikasi untuk memberikan pengalaman rekaman berkualitas dan memukau bagi para musisi dan penggemar musik di seluruh dunia.</p>
-          <Link href="/about" className="btn btn-outline hover:bg-transparent hover:text-zinc-500">see project</Link>
+
+          <p className="py-4 md:py-6 text-sm leading-relaxed text-zinc-500 px-0 md:px-6 text-center">Kami adalah sebuah music studio recording yang berdedikasi untuk memberikan pengalaman rekaman berkualitas dan memukau bagi para musisi dan penggemar musik di seluruh dunia.</p>
+          <Link href="/about" className="btn btn-outline mx-auto hover:bg-transparent hover:text-zinc-500">see project</Link>
         </div>
       </div>
       {/* About Us Section */}
-      <div className='w-full px-3 md:px-0 flex gap-4 flex-col-reverse md:flex-row-reverse items-start h-full relative z-30'>
+      <div className='w-full px-3 py-10 md:py-20  md:px-0 flex gap-4 flex-col-reverse md:flex-row-reverse items-start h-full relative z-30'>
         <div className='flex-1 relative'>
           <Image src="/SRE.png" alt='sre' width={1200} height={900} priority={true} className="object-cover" />
           <div className='absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black z-10'></div>
@@ -50,7 +67,7 @@ export default function Home() {
         </div>
       </div>
       {/* Why Choose Us Section*/}
-      <div className='w-full h-full px-2 py-20 '>
+      <div className='w-full h-full px-2 py-10 md:py-20 '>
         <h2 className='mb-6 text-sm md:text-xl'>Alasan mengapa bekerja sama dengan <span className='text-red-600 font-semibold'>STARECORDS</span> ??</h2>
         <div className={`flex flex-col p-4 py-8 md:flex-row items-start justify-center gap-4 ${mode === "light" ? "bg-zinc-100 md:bg-inherit shadow-xl md:shadow-none rounded-t-3xl shadow-black/20" : ""}`}>
           {data.map((item) => (
@@ -68,8 +85,8 @@ export default function Home() {
         </div>
       </div>
       {/* Services Section */}
-      <div className='relative overflow-hidden w-full h-full'>
-        <div className='w-full h-full py-4 md:py-14'>
+      <div className='relative overflow-hidden py-10 md:py-20 w-full h-full'>
+        <div className='w-full h-full '>
           <div className='w-full text-center max-w-md mx-auto mb-10'>
             <h2 className=" mb-3 pl-2 text-xl md:text-2xl  font-semibold">
               Our <span className='border-b border-zinc-500 font-bold'>Services</span>
@@ -122,7 +139,7 @@ export default function Home() {
       </div>
 
       {/* Contact Section */}
-      <div className='w-full h-full py-0 md:py-20'>
+      <div className='w-full h-full py-10 md:py-20'>
         <div className={` py-10 ${mode === "light" ? "bg-[#040608] text-zinc-200" : "bg-zinc-100"} text-zinc-500`}>
           <h2 className={`text-center text-2xl md:text-4xl w-full mb-14 max-w-md mx-auto ${mode === "light" ? "text-zinc-100" : "text-zinc-800"}`}>Let`s discuss on <span className="font-bold">something</span> cool together</h2>
           <div className='grid grid-cols-1 md:grid-cols-12 gap-6 pb-14'>
@@ -169,34 +186,21 @@ export default function Home() {
         </div>
       </div>
       {/* Thank To */}
-      <div className='w-[80%] mx-auto h-full overflow-hidden'>
+      <div className='w-full mx-auto h-full py-20 overflow-hidden'>
         <h2 className='text-center py-8'>Thank To :</h2>
-        <div className='w-[1200px] slides h-full flex items-center'>
-          <div className='w-full h-full group'>
-
-            <Image src="/1.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/2.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/3.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/4.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/5.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/6.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/7.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
-          <div className='w-full h-full'>
-            <Image src="/8.png" alt='logo' width={90} height={90} className='grayscale-[100] transition-all duration-300 ease-linear hover:grayscale-0' priority={true} />
-          </div>
+        <div className="w-full h-full slides transition-all duration-300 ease-linear flex items-center gap-2">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`slide ${index === currentSlide ? 'active transition-all duration-300 ease-linear' : 'grayscale-[100] transition-all duration-300 ease-linear'}`}
+              style={{
+                transform: `translateX(${(index - currentSlide) * (100 / totalSlides)}%)`,
+                opacity: index === currentSlide ? 1 : 0.5
+              }}
+            >
+              <Image src={image} alt="logo" width={120} height={120} priority={true} className="object-contain" />
+            </div>
+          ))}
         </div>
       </div>
     </section >
