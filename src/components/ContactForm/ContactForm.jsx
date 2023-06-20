@@ -34,12 +34,12 @@ const ContactForm = () => {
         return () => clearTimeout(timeoutId);
       } else {
         // handle error response
-        setError(response.data.message);
+        setError(response.message);
       }
     } catch (error) {
       reset();
       setLoading(false);
-      setError(error.response.data.message);
+      setError(error.message);
       const timeoutId = setTimeout(() => {
         setError(false);
       }, 4000);
