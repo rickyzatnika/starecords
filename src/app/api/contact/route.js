@@ -9,12 +9,12 @@ export const POST = async (request) => {
     await connect();
 
     try {
-        const contact = new Contact({
+        const contacts = new Contact({
             name,
             email,
             phone,
         })
-        await contact.save();
+        await contacts.save();
         return new NextResponse("success", { status: 201 })
     } catch (error) {
         return new NextResponse("Failed!", { status: 500 })
