@@ -36,8 +36,13 @@ const ContactForm = () => {
         e.target.reset();
         return () => clearTimeout(timeoutId);
       } else {
-        setLoading(false);
         setError("Upss Sorry, something went wrong!!");
+        const timeoutId = setTimeout(() => {
+          setLoading(false);
+          setError(false);
+        }, 3000);
+        e.target.reset();
+        return () => clearTimeout(timeoutId);
       }
     } catch (error) {
       setLoading(false);
