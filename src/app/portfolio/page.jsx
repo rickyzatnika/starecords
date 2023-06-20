@@ -32,7 +32,6 @@ const Portfolio = () => {
             },
           }
         );
-        console.log(response.data.resources);
         setData(response.data.resources);
       } catch (error) {
         setIsLoading(false);

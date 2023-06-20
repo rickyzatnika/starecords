@@ -91,7 +91,7 @@ export default function Home() {
             <h2 className=" mb-3 pl-2 text-xl md:text-2xl  font-semibold">
               Our <span className='border-b border-zinc-500 font-bold'>Services</span>
             </h2>
-            <p className='text-sm md:text-md'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero?</p>
+            <p className='text-sm px-2 md:text-md'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero?</p>
           </div>
           <div className='relative overflow-hidden w-full h-full'>
             <Image src="/inst.png" alt="" width={1200} height={1200} className='object-cover' priority={true} />

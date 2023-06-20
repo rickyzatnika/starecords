@@ -22,32 +22,16 @@ const Footer = () => {
           </div>
           <div>
             <span className="footer-title">Services</span>
-            <Link
-              href="/about/instrument"
-              passHref={true}
-              className="link link-hover"
-            >
+            <Link href="/about" passHref={true} className="link link-hover">
               Instrument Rent
             </Link>
-            <Link
-              href="/about/fisical"
-              passHref={true}
-              className="link link-hover"
-            >
+            <Link href="/about" passHref={true} className="link link-hover">
               Fisical Release
             </Link>
-            <Link
-              href="/about/digital"
-              passHref={true}
-              className="link link-hover"
-            >
+            <Link href="/about" passHref={true} className="link link-hover">
               Digital Release
             </Link>
-            <Link
-              href="/about/entertainment"
-              passHref={true}
-              className="link link-hover"
-            >
+            <Link href="/about" passHref={true} className="link link-hover">
               Music Entertainment
             </Link>
           </div>
