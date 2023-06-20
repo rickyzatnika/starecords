@@ -53,16 +53,16 @@ const Footer = () => {
           </div>
           <div>
             <span className="footer-title">Company</span>
-            <Link href="" passHref={true} className="link link-hover">
+            <Link href="/about" passHref={true} className="link link-hover">
               About us
             </Link>
-            <Link href="" passHref={true} className="link link-hover">
+            <Link href="/portfolio" passHref={true} className="link link-hover">
               Portfolio
             </Link>
-            <Link href="" passHref={true} className="link link-hover">
+            <Link href="/news" passHref={true} className="link link-hover">
               News
             </Link>
-            <Link href="" passHref={true} className="link link-hover">
+            <Link href="/contact" passHref={true} className="link link-hover">
               Contact
             </Link>
           </div>
