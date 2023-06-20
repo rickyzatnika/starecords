@@ -34,7 +34,8 @@ const ContactForm = () => {
         return () => clearTimeout(timeoutId);
       } else {
         // handle error response
-        setError(response.message);
+        setLoading(false);
+        setError("Server not responding!");
       }
     } catch (error) {
       setLoading(false);
